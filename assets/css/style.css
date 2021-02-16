@@ -1,5 +1,5 @@
 body{
-    background-color: dimgray;
+    background-color: #ebe7e74d;
 }
 #myCanvas{
     border: 2px solid #FFF;
@@ -9,4 +9,8 @@ body{
     right:0;
     left:0;
     bottom:0;
+}
+.display{
+    margin-top: 80vh;
+    margin-left: 40vw;
 }
