@@ -40,20 +40,9 @@ wall.src = "sounds/wall.mp3";
 comScore.src = "sounds/comScore.mp3";
 userScore.src = "sounds/userScore.mp3";
 
-// Ball object
-const ball = {
-    x : canvas.width/2,
-    y : canvas.height/2,
-    radius : 10,
-    velocityX : 5,
-    velocityY : 5,
-    speed : 7,
-    color : "WHITE"
-}
-
 // User Paddle
 class Layout{
-    constructor(x,y,width,height,score,color){
+    constructor(x,y,color,width,height,score){
         this.x=x;
         this.y=y;
         this.width=width;
@@ -62,13 +51,26 @@ class Layout{
         this.color=color;
     }
 }
-const user = new Layout(0,(canvas.height - 100)/2,10,100,0,"WHITE");
+const user = new Layout(0,(canvas.height - 100)/2,"WHITE",10,100,0);
 
 // COM Paddle
-const com = new Layout(canvas.width - 10,(canvas.height - 100)/2,10,100,0,"WHITE");
+const com = new Layout(canvas.width - 10,(canvas.height - 100)/2,"WHITE",10,100,0);
 
 // NET
-const net = new Layout((canvas.width - 2)/2,0,2,10,null,"WHITE");
+const net = new Layout((canvas.width - 2)/2,0,"WHITE",2,10,null);
+
+// Ball object
+class Ball extends Layout{
+    constructor(x,y,color,width,height,score, radius, velocityX, velocityY, speed){
+        super(x, y, color,width,height,score);
+        this.radius= radius;
+        this.velocityX=velocityX;
+        this.velocityY=velocityY;
+        this.speed=speed;
+    }
+    
+} 
+const ball = new Ball(canvas.width/2, canvas.height/2, "WHITE",null, null,null, 10, 5, 5, 7);
 
 // draw a rectangle, will be used to draw paddles
 function drawRect(x, y, w, h, color){
