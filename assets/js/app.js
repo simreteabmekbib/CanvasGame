@@ -61,8 +61,8 @@ const net = new Layout((canvas.width - 2)/2,0,"WHITE",2,10,null);
 
 // Ball object
 class Ball extends Layout{
-    constructor(x,y,color,width,height,score, radius, velocityX, velocityY, speed){
-        super(x, y, color,width,height,score);
+    constructor(x,y,color, radius, velocityX, velocityY, speed){
+        super(x, y, color);
         this.radius= radius;
         this.velocityX=velocityX;
         this.velocityY=velocityY;
@@ -70,7 +70,7 @@ class Ball extends Layout{
     }
     
 } 
-const ball = new Ball(canvas.width/2, canvas.height/2, "WHITE",null, null,null, 10, 5, 5, 7);
+const ball = new Ball(canvas.width/2, canvas.height/2, "WHITE", 10, 5, 5, 7);
 
 // draw a rectangle, will be used to draw paddles
 function drawRect(x, y, w, h, color){
